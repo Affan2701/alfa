@@ -1,307 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Continuous Loop Galleries</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .gallery-container {
-            position: relative;
-            max-width: 1000px;
-            margin: 40px auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery-title {
-            text-align: center;
-            margin: 20px 0 10px;
-            color: #333;
-        }
-        
-        .gallery-slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            height: 500px;
-        }
-        
-        .slide {
-            min-width: 100%;
-            position: relative;
-        }
-        
-        .slide img, .slide video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .slide-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 15px;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 10;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .prev-btn {
-            left: 10px;
-        }
-        
-        .next-btn {
-            right: 10px;
-        }
-        
-        .nav-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        
-        .dots-container {
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-        }
-        
-        .dot {
-            width: 12px;
-            height: 12px;
-            margin: 0 5px;
-            border-radius: 50%;
-            background-color: #bbb;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .dot.active {
-            background-color: #333;
-        }
-        
-        @media (max-width: 768px) {
-            .gallery-slider {
-                height: 300px;
-            }
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
+    <script src="myscript.js"></script>
     <!-- First Gallery -->
     <h2 class="gallery-title">Nature Gallery</h2>
     <div class="gallery-container" id="gallery1">
-        <div class="gallery-slider">
-            <!-- Slide 1 - Image -->
-            <div class="slide">
-                <img src="https://source.unsplash.com/random/800x500?nature,1" alt="Nature 1">
-                <div class="slide-content">
-                    <h3>Beautiful Nature 1</h3>
-                    <p>First nature image</p>
-                </div>
-            </div>
-            
-            <!-- Slide 2 - Image -->
-            <div class="slide">
-                <img src="https://source.unsplash.com/random/800x500?nature,2" alt="Nature 2">
-                <div class="slide-content">
-                    <h3>Beautiful Nature 2</h3>
-                    <p>Second nature image</p>
-                </div>
-            </div>
-            
-            <!-- Slide 3 - Image -->
-            <div class="slide">
-                <img src="https://source.unsplash.com/random/800x500?nature,3" alt="Nature 3">
-                <div class="slide-content">
-                    <h3>Beautiful Nature 3</h3>
-                    <p>Third nature image</p>
-                </div>
-            </div>
+      <div class="gallery-slider">
+        <!-- Slide 1 - Image -->
+        <div class="slide">
+          <img src="/img/41YMq-O5suL-removebg-preview.png" alt="Nature 1" />
+          <div class="slide-content">
+            <h3>Beautiful Nature 1</h3>
+            <p>First nature image</p>
+          </div>
         </div>
-        
-        <button class="nav-btn prev-btn">&#10094;</button>
-        <button class="nav-btn next-btn">&#10095;</button>
-        
-        <div class="dots-container">
-            <!-- Dots will be added dynamically by JavaScript -->
+
+        <!-- Slide 2 - Image -->
+        <div class="slide">
+          <img
+            src="/post/Black Modern Handwritten Motivation Quote Social Media.png"
+            alt="Nature 2"
+          />
+          <div class="slide-content">
+            <h3>Beautiful Nature 2</h3>
+            <p>Second nature image</p>
+          </div>
         </div>
+
+        <!-- Slide 3 - Image -->
+        <div class="slide">
+          <img src="/post/Holdme.png" alt="Nature 3" />
+          <div class="slide-content">
+            <h3>Beautiful Nature 3</h3>
+            <p>Third nature image</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-btn prev-btn">&#10094;</button>
+      <button class="nav-btn next-btn">&#10095;</button>
+
+      <div class="dots-container">
+        <!-- Dots will be added dynamically by JavaScript -->
+      </div>
     </div>
 
     <!-- Second Gallery -->
     <h2 class="gallery-title">City Gallery</h2>
     <div class="gallery-container" id="gallery2">
-        <div class="gallery-slider">
-            <!-- Slide 1 - Image -->
-            <div class="slide">
-                <img src="https://source.unsplash.com/random/800x500?city,1" alt="City 1">
-                <div class="slide-content">
-                    <h3>Urban Landscape 1</h3>
-                    <p>First city image</p>
-                </div>
-            </div>
-            
-            <!-- Slide 2 - Video -->
-            <div class="slide">
-                <video controls>
-                    <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="slide-content">
-                    <h3>City Video</h3>
-                    <p>Watch this city footage</p>
-                </div>
-            </div>
-            
-            <!-- Slide 3 - Image -->
-            <div class="slide">
-                <img src="https://source.unsplash.com/random/800x500?city,2" alt="City 2">
-                <div class="slide-content">
-                    <h3>Urban Landscape 2</h3>
-                    <p>Second city image</p>
-                </div>
-            </div>
+      <div class="gallery-slider">
+        <!-- Slide 1 - Image -->
+        <div class="slide">
+          <img
+            src="https://source.unsplash.com/random/800x500?city,1"
+            alt="City 1"
+          />
+          <div class="slide-content">
+            <h3>Urban Landscape 1</h3>
+            <p>First city image</p>
+          </div>
         </div>
-        
-        <button class="nav-btn prev-btn">&#10094;</button>
-        <button class="nav-btn next-btn">&#10095;</button>
-        
-        <div class="dots-container">
-            <!-- Dots will be added dynamically by JavaScript -->
-        </div>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize all galleries on the page
-            const galleries = document.querySelectorAll('.gallery-container');
-            
-            galleries.forEach((gallery) => {
-                const slider = gallery.querySelector('.gallery-slider');
-                const slides = gallery.querySelectorAll('.slide');
-                const prevBtn = gallery.querySelector('.prev-btn');
-                const nextBtn = gallery.querySelector('.next-btn');
-                const dotsContainer = gallery.querySelector('.dots-container');
-                
-                let currentIndex = 0;
-                const slideCount = slides.length;
-                
-                // Clone first slide and append to end for seamless looping
-                const firstSlideClone = slides[0].cloneNode(true);
-                slider.appendChild(firstSlideClone);
-                
-                // Create dots for this gallery (don't create for the clone)
-                slides.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('dot');
-                    if (index === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => goToSlide(index));
-                    dotsContainer.appendChild(dot);
-                });
-                
-                // Update slider position
-                function updateSlider() {
-                    // When at the clone (last position), instantly jump to first slide without animation
-                    if (currentIndex >= slideCount) {
-                        slider.style.transition = 'none';
-                        slider.style.transform = `translateX(0)`;
-                        // Force reflow to apply the immediate change
-                        void slider.offsetWidth;
-                        currentIndex = 0;
-                        slider.style.transition = 'transform 0.5s ease-in-out';
-                    }
-                    
-                    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    
-                    // Update active dot (use modulo to handle the clone position)
-                    const dots = dotsContainer.querySelectorAll('.dot');
-                    dots.forEach((dot, index) => {
-                        dot.classList.toggle('active', index === (currentIndex % slideCount));
-                    });
-                }
-                
-                // Go to specific slide
-                function goToSlide(index) {
-                    currentIndex = index;
-                    updateSlider();
-                }
-                
-                // Next slide - always moves right
-                function nextSlide() {
-                    currentIndex++;
-                    updateSlider();
-                }
-                
-                // Previous slide - moves left but still loops continuously
-                function prevSlide() {
-                    if (currentIndex <= 0) {
-                        // If at first slide, jump to the clone position (no animation)
-                        slider.style.transition = 'none';
-                        currentIndex = slideCount;
-                        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-                        // Force reflow to apply the immediate change
-                        void slider.offsetWidth;
-                        slider.style.transition = 'transform 0.5s ease-in-out';
-                    }
-                    currentIndex--;
-                    updateSlider();
-                }
-                
-                // Button events for this gallery
-                nextBtn.addEventListener('click', nextSlide);
-                prevBtn.addEventListener('click', prevSlide);
-                
-                // Touch events for mobile swipe
-                let touchStartX = 0;
-                let touchEndX = 0;
-                
-                slider.addEventListener('touchstart', (e) => {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, {passive: true});
-                
-                slider.addEventListener('touchend', (e) => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                }, {passive: true});
-                
-                function handleSwipe() {
-                    const threshold = 50; // Minimum swipe distance
-                    if (touchEndX < touchStartX - threshold) {
-                        nextSlide(); // Swipe left
-                    } else if (touchEndX > touchStartX + threshold) {
-                        prevSlide(); // Swipe right
-                    }
-                }
-                
-                // Auto-advance (optional) - uncomment to enable
-                // setInterval(nextSlide, 5000);
-            });
-        });
-    </script>
-</body>
+        <!-- Slide 2 - Video -->
+        <div class="slide">
+          <video controls>
+            <source
+              src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="slide-content">
+            <h3>City Video</h3>
+            <p>Watch this city footage</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 - Image -->
+        <div class="slide">
+          <img
+            src="https://source.unsplash.com/random/800x500?city,2"
+            alt="City 2"
+          />
+          <div class="slide-content">
+            <h3>Urban Landscape 2</h3>
+            <p>Second city image</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-btn prev-btn">&#10094;</button>
+      <button class="nav-btn next-btn">&#10095;</button>
+
+      <div class="dots-container">
+        <!-- Dots will be added dynamically by JavaScript -->
+      </div>
+    </div>
+  </body>
 </html>
